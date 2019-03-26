@@ -12,8 +12,8 @@ import (
 
 // Transition is a struct, embed it in your struct to enable state machine for the struct
 type Transition struct {
-	State           string
-	StateChangeLogs []StateChangeLog `sql:"-"`
+	State           string           `json:"state"`
+	StateChangeLogs []StateChangeLog `sql:"-" json:"-"`
 }
 
 // SetState set state to Stater, just set, won't save it into database
